@@ -4,9 +4,10 @@
   position: fixed;
   top: 0;
   z-index: 999;
+  height: 65px;
   background-color: transparent;
   transition: background 0.4s ease;
-  background-color: var(---collor-primary-navyblue);
+ background-color: var(---collor-primary-navyBlack);
 
   .contentHeader {
     display: flex;
@@ -16,7 +17,7 @@
 }
 
 .Header.HeaderScrolled {
-  background-color: var(---collor-primary-navyblue);
+   background-color: var(---collor-primary-navyBlack);
 }
 
 /* Estilo do Titulo */

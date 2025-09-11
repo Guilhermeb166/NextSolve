@@ -1,8 +1,7 @@
 "use client";
-
 import * as THREE from "three";
 import React, { Suspense, useRef } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas, useFrame, useLoader  } from "@react-three/fiber";
 import {
   Html,
   Environment,
@@ -14,6 +13,8 @@ import styles from "./styles/ImageHome.module.css";
 import ContentPc from "./ContentPc";
 
 function Model(props) {
+  const texture = useLoader(THREE.TextureLoader, "/images/backgroundPc.jpg")
+  texture.flipY = false
   const group = useRef();
   const { nodes, materials } = useGLTF("/mac-draco.glb");
 
@@ -23,22 +24,22 @@ function Model(props) {
     group.current.rotation.x = THREE.MathUtils.lerp(
       group.current.rotation.x,
       Math.cos(t / 2) / 20 + 0.25,
-      0.1
+      0.8
     );
     group.current.rotation.y = THREE.MathUtils.lerp(
       group.current.rotation.y,
       Math.sin(t / 4) / 20,
-      0.1
+      0.8
     );
     group.current.rotation.z = THREE.MathUtils.lerp(
       group.current.rotation.z,
       Math.sin(t / 8) / 20,
-      0.1
+      0.8
     );
     group.current.position.y = THREE.MathUtils.lerp(
       group.current.position.y,
       (-2 + Math.sin(t / 2)) / 2,
-      0.1
+      0.8
     );
   });
 
@@ -49,14 +50,16 @@ function Model(props) {
           <mesh material={materials.aluminium} geometry={nodes["Cube008"].geometry} />
           <mesh material={materials["matte.001"]} geometry={nodes["Cube008_1"].geometry} />
           <mesh geometry={nodes["Cube008_2"].geometry}>
+            <meshBasicMaterial map={texture} />
             <Html
               className="content"
               rotation-x={-Math.PI / 2}
               position={[0, 0.05, -0.09]}
               transform
               occlude
+
             >
-              <div className="wrapper" onPointerDown={(e) => e.stopPropagation()}>
+              <div className="wrapper" style={{ width: "100%", height: "100%" }} onPointerDown={(e) => e.stopPropagation()}>
                 <ContentPc />
               </div>
             </Html>
@@ -82,12 +85,13 @@ function Model(props) {
 }
 
 export default function ImageHome() {
+  
   return (
     <section className={styles.ImageHome}>
-      <Canvas camera={{ position: [-5, 0, -15], fov: 55 }}>
+      <Canvas camera={{ position: [-5, 0, -15], fov: 55}}>
         <pointLight position={[10, 10, 10]} intensity={1.5} />
         <Suspense fallback={null}>
-          <group rotation={[0, Math.PI, 0]} position={[0, 1, 0]} scale={[0.9, 0.9, 0.9]}>
+          <group rotation={[0, Math.PI, 0]} position={[0, 1, 0]} scale={[0.9, 0.9, 0.8]}>
             <Model />
           </group>
           <Environment preset="city" />
@@ -101,8 +105,8 @@ export default function ImageHome() {
         <OrbitControls
           enablePan={false}
           enableZoom={false}
-          minPolarAngle={Math.PI / 2.2}
-          maxPolarAngle={Math.PI / 2.2}
+          minPolarAngle={Math.PI / 4.2}
+          maxPolarAngle={Math.PI / 1.9}
         />
       </Canvas>
     </section>

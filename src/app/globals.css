@@ -7,14 +7,14 @@
   scrollbar-width: none;
   scroll-behavior: smooth;
   font-family: "Poppins", sans-serif;
-  font-weight: 600;
+  font-weight: 400;
   font-style: normal;
   text-decoration: none;
 }
 
 :root {
   ---collor-primary-navyblue: #040414;
-  ---collor-primary-navyblac: #03030c;
+  ---collor-primary-navyBlack: #03030c;
   ---collor-secundary-white: #edeeef;
   ---collor-details-cyan: #14cddd;
   ---collor-alternative--darkCyan: #185d6a;
@@ -24,6 +24,7 @@
 
 .color_cyan {
   color: var(---collor-details-cyan);
+  font-weight: 500;
 }
 
 .section_global {
@@ -32,6 +33,3 @@
   padding: 15px 4%;
 }
 
-body {
- /*  background-color: var(---collor-primary-navyblue); */
-}

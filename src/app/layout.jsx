@@ -1,5 +1,6 @@
 import "./globals.css";
 import Header from "@/layout/header/Header";
+import ImageIlustration from "@/components/ImageContent/Ilustration";
 
 export const metadata = {
   title: "NextSolve",
@@ -10,7 +11,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="pt-br">
       <body>
-        <Header/>
+        <Header />
+        <ImageIlustration />
         {children}
       </body>
     </html>

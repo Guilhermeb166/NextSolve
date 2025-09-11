@@ -1,0 +1,15 @@
+.boxImage {
+  margin-top: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+.dimensionImage {
+  width: 1980px;
+}
+  
+  .ImageIlustration {
+    width: 100%;
+  }
+}
