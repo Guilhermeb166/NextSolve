@@ -18,6 +18,7 @@
   --collor-secundary-white: #edeeef;
   --collor-details-cyan: #14cddd;
   --collor-alternative--darkCyan: #185d6a;
+  --color-background:#12171A;
   --collor-alternative--darkCyan2: #097b8c;
   --collor-glass-transparent: rgba(255, 255, 255, 0.35);
   --fonte-orbitron:'Orbitron', sans-serif;
@@ -33,4 +34,8 @@
   max-width: 1980px;
   margin: 0 auto;
   padding: 15px 4%;
+}
+
+body{
+  background-color: var(--color-background);
 }

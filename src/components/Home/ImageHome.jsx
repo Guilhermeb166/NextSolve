@@ -105,9 +105,9 @@ export default function ImageHome() {
   return (
     <section className={styles.ImageHome} ref={ref}>
       <Canvas camera={{ position: [-5, 0, -15], fov: 55}}>{/*position → posição da câmera no espaço 3D (x, y, z).| fov: 50 → campo de visão da câmera,. */}
-        <pointLight position={[10, 10, 10]} intensity={2.5} />{/*pointLight é como uma lâmpada que ilumina tudo ao redor. position é onde a lâmpada está. intensity é quão forte é a luz.*/}
+        <pointLight position={[10, 10, 10]} intensity={8.5} />{/*pointLight é como uma lâmpada que ilumina tudo ao redor. position é onde a lâmpada está. intensity é quão forte é a luz.*/}
         <Suspense fallback={null}>
-          <group rotation={[0, Math.PI, 0]} position={[-2, -1, 0]} scale={[1, 1, 0.9]}>
+          <group rotation={[0, Math.PI, 0]} position={[-2, -1, 0]} scale={[0.9, 0.9, 0.8]}>
             <Model resetAnimation={inView}/>
           </group>
           <Environment preset="city" />
@@ -116,13 +116,14 @@ export default function ImageHome() {
           position={[0, -3.5, 0]}
           scale={20}
           blur={3}
-          far={3.5}
+          far={6.5}
+          color='#14cddd'
         />
         <OrbitControls /*permite girar o notebook com o mouse. */
           enablePan={false} /*não permite arrastar o notebook. */
           enableZoom={false} /*não permite dar zoom. */
-          minPolarAngle={Math.PI / 2.2}
-          maxPolarAngle={Math.PI / 1.5}
+          minPolarAngle={Math.PI / 2.5}
+          maxPolarAngle={Math.PI / 2.5}
           //limitam quanto você pode girar o notebook para cima e para baixo.
         />
       </Canvas>

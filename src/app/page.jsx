@@ -5,7 +5,7 @@ import ImageHome from "@/components/Home/ImageHome";
 import DescriptionH from "@/components/Home/DescritionHome";
 import ImageIlustration from "@/components/ImageContent/Ilustration";
 import Title from "@/components/Title/Title";
-import CardsServices from "@/components/Home/service";
+import CardsServices from "@/components/Home/CardsServices";
 
 export default function Home() {
   return (

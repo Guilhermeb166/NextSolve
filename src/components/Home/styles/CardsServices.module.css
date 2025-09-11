@@ -3,33 +3,33 @@
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  flex-wrap: wrap;
-
-    display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-.TitleCards {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  color: #001f3f;
+.ServiceCardsWrapper {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .ServiceCards {
   width: 320px;
   height: 360px;
-  background-color: var(--collor-primary-navyblue);
+  background-color: #64c8ff14;
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
+  transition: transform 0.3s, background-color 0.3s !important;
+  cursor: pointer;
+  position: relative;
 
-.ServiceCards:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  &:hover {
+    box-shadow: 1px 1px 4px 0.5px var(--collor-details-cyan);
+    transform:  translateY(-10px) ;   
+  }
 }
 
 .cardContent {

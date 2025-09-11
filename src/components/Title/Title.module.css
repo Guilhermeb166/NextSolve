@@ -8,7 +8,7 @@
   position: relative;
   width: 600px;
   height: 55px;
-  background-color: var(--collor-primary-navyblue);
+  background-color: #64c8ff14;
   color: #fff;
   display: flex;
   align-items: center;
@@ -21,19 +21,7 @@
   justify-content: center;
 }
 
-/* seta esquerda */
-.dimensionTitle::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -40px;
-  width: 0;
-  height: 0;
-  border-top: 27.5px solid transparent;   /* metade da altura (55px/2) */
-  border-bottom: 27.5px solid transparent;
-  border-right: 40px solid var(--collor-primary-navyblue);
-  transition: all 0.7s ease;
-}
+
 
 /* seta direita */
 .dimensionTitle::after {
@@ -45,12 +33,11 @@
   height: 0;
   border-top: 27.5px solid transparent;
   border-bottom: 27.5px solid transparent;
-  border-left: 40px solid var(--collor-primary-navyblue);
+  border-left: 40px solid #64c8ff14;
   transition: all 0.7s ease;
 }
 
-/* animação hover */
+
 .dimensionTitle:hover {
   transform: translateY(-5px);
-  box-shadow: 0 4px 12px var(--collor-details-cyan);
 }

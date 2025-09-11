@@ -2,13 +2,13 @@
     width: 50%;
     height: 500px;
     border: 1px solid var(--collor-alternative--darkCyan);
-    background: rgba(255, 255, 255, 0.2);
+    background: #64c8ff14 ;
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.201);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 5px;
+   border: none;
+    border-radius: 10px;
     padding: 20px;
     display: flex;
     align-items: center;
@@ -20,14 +20,16 @@
 }
 
 .titleDescription {
-    font-size: 23px;
+    font-size: 2rem;
     text-align: start;
     font-weight: 700;
-    color: var(--collor-primary-navyblue);
+    color: var( --collor-secundary-white);
 }
 
 .paragraph {
-    color: var(--collor-primary-navyblue);
+    color: var( --collor-secundary-white);
+    font-size: 1.1rem;
+    letter-spacing: 1px;
 }
 
 .btnsHom {
@@ -39,15 +41,16 @@
     .button {
         border: none;
         border-radius: 5px;
-         height: 25px;
-        width: 150px;
+        letter-spacing: 1px;
+        font-size: 0.9rem;
+        padding: 6px;
         cursor: pointer;
-        transition:box-shadow 0.15s ease-in-out !important;
         color: var(--collor-primary-navyblue);
         background-color: var(--collor-details-cyan);
+        transition:box-shadow 0.2s ease-in-out !important;
 
         &.button:hover {
-            box-shadow: 1px 1px 1px 0.5px var(--collor-primary-navyblue);
+            box-shadow: 1px 1px 3px 0.5px var(--collor-primary-navyblue);
         }
     }
 }

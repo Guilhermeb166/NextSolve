@@ -12,6 +12,7 @@ export default function Title({ text }) {
       easing: 'ease-out-quad',
       once: false,
       offset: 50,
+      useClassNames: true
     });
   }, []);
 

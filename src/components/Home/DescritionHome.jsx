@@ -11,6 +11,7 @@ export default function Description() {
       easing: 'ease-out-quad',
       once: false,
       offset: 50,
+      useClassNames: true
     });
 
     AOS.refresh();
