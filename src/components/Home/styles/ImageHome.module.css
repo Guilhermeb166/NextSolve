@@ -2,8 +2,9 @@
   height: 580px;
   width: 50%;
   display: flex;
-  justify-content: center;
+  justify-content: end;
   align-items: center;
+
 }
 
 .wrapper {

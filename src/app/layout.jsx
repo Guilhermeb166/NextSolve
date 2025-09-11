@@ -1,6 +1,6 @@
+//Layout.jsx -Tudo que você coloca nele envolve todas as páginas, somente será colocado header e footer.
 import "./globals.css";
 import Header from "@/layout/header/Header";
-import ImageIlustration from "@/components/ImageContent/Ilustration";
 
 export const metadata = {
   title: "NextSolve",
@@ -11,9 +11,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="pt-br">
       <body>
-        <Header />
-        <ImageIlustration />
-        {children}
+        <Header /> {/* Header */}
+        {children} {/* Páginas renderizadas */}
+                   {/* Footer */}
       </body>
     </html>
   );

@@ -1,9 +1,10 @@
 .boxImage {
-  margin-top: 65px;
+
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
+  margin-bottom: 70px;
 
 .dimensionImage {
   width: 1980px;

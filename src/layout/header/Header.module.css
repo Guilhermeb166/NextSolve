@@ -7,7 +7,7 @@
   height: 65px;
   background-color: transparent;
   transition: background 0.4s ease;
- background-color: var(---collor-primary-navyBlack);
+
 
   .contentHeader {
     display: flex;
@@ -16,13 +16,14 @@
   }
 }
 
-.Header.HeaderScrolled {
-   background-color: var(---collor-primary-navyBlack);
+.HeaderScrolled {
+  background-color: var(--collor-primary-navyBlack);
 }
 
 /* Estilo do Titulo */
 .titleLink {
-  color: var(---collor-secundary-white);
+  color: var(--collor-secundary-white);
+  font-family: var(--fonte-orbitron);
 }
 
 .linkButton {
@@ -35,13 +36,14 @@
   height: 30px;
   border-radius: 5px;
   border: none;
-  background-color: var(---collor-secundary-white);
-  color: var(---collor-primary-navyblue);
-  cursor: pointer;  
+  background-color: var(--collor-secundary-white);
+  color: var(--collor-primary-navyblue);
+  cursor: pointer;
   transition: 0.6s;
+   font-family: "Mokoto'";
 
   &.BtnHeader:hover {
-    background-color: var(---collor-details-cyan);
-    color: var(---collor-secundary-white);
+    background-color: var(--collor-details-cyan);
+    color: var(--collor-secundary-white);
   }
 }

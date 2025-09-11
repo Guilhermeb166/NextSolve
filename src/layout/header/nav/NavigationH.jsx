@@ -5,7 +5,7 @@ export default function NavigationH() {
  const links = [
   { href: "/home", label: "Início" },          // Mais atual e limpo que "Home"
   { href: "/sobre", label: "Quem Somos" },     // Mais institucional e acolhedor
-  { href: "/comunidade", label: "Conexões" },  // Traz ideia de rede e pertencimento
+  { href: "/comunidade", label: "Serviços" },  // Traz ideia de rede e pertencimento
   { href: "/servicos", label: "Soluções" },    // Soa mais moderno e orientado a valor
   { href: "/projetos", label: "Iniciativas" }  // Passa inovação e movimento
 ]

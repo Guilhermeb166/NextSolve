@@ -9,9 +9,11 @@ export default function Description() {
     AOS.init({
       duration: 800,
       easing: 'ease-out-quad',
-      once: true,
+      once: false,
       offset: 50,
     });
+
+    AOS.refresh();
   }, []);
 
   return (

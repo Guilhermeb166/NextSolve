@@ -5,7 +5,7 @@ export default function ImageIlustration() {
     return (
         <section className={styles.boxImage}>
             <div className={styles.dimensionImage}>
-                <img className={styles.ImageIlustration} src={"/images/nextSolve.jpg"} alt="Image-NextSolve" />
+                <img className={styles.ImageIlustration} src={"/images/tec.png"} alt="Image-NextSolve" />
             </div>
         </section>
     )
