@@ -1,23 +1,23 @@
-'use client'
-import styles from './Title.module.css'
-import { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+"use client";
+import styles from "./Title.module.css";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
-export default function Title({ text }) {
-
+export default function Title({ text, noPaddingBottom }) {
   useEffect(() => {
     AOS.init({
       duration: 700,
-      easing: 'ease-out-quad',
+      easing: "ease-out-quad",
       once: false,
       offset: 50,
-      useClassNames: true
+      useClassNames: true,
     });
   }, []);
 
   return (
-    <section className={styles.boxTitule}
+    <section
+      className={` ${styles.boxTitle} ${noPaddingBottom ? styles.noPaddingBottom : ""}`}
       data-aos="fade-right"
       data-aos-delay="500"
     >
@@ -25,6 +25,6 @@ export default function Title({ text }) {
         <h2 className={styles.TitleInform}>{text}</h2>
       </div>
     </section>
-  )
+  );
 }
 //ai tu pode alterar aqui, e quando for passar pro home, apenas passar <Title text="o que tu quiser"/>, ja deixei la  pra tu ver

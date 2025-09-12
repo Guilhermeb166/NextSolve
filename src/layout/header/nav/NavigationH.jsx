@@ -1,14 +1,14 @@
-import Link from "next/link"
-import styles from "./NavigationH.module.css"
+import Link from "next/link";
+import styles from "./NavigationH.module.css";
 
 export default function NavigationH() {
- const links = [
-  { href: "/home", label: "Início" },          // Mais atual e limpo que "Home"
-  { href: "/sobre", label: "Quem Somos" },     // Mais institucional e acolhedor
-  { href: "/comunidade", label: "Serviços" },  // Traz ideia de rede e pertencimento
-  { href: "/servicos", label: "Soluções" },    // Soa mais moderno e orientado a valor
-  { href: "/projetos", label: "Iniciativas" }  // Passa inovação e movimento
-]
+  const links = [
+    { href: "/", label: "Início" }, // Mais atual e limpo que "Home"
+    { href: "#quem-somos", label: "Quem Somos" }, // Mais institucional e acolhedor
+    { href: "#cards-services", label: "Serviços" }, // Traz ideia de rede e pertencimento
+    { href: "/servicos", label: "Soluções" }, // Soa mais moderno e orientado a valor
+    { href: "/projetos", label: "Iniciativas" }, // Passa inovação e movimento
+  ];
 
   return (
     <nav className={styles.navContainer}>
@@ -18,5 +18,5 @@ export default function NavigationH() {
         </Link>
       ))}
     </nav>
-  )
+  );
 }

@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap");
+
 * {
   padding: 0%;
   margin: 0%;
@@ -17,17 +18,16 @@
   --collor-primary-navyBlack: #03030c;
   --collor-secundary-white: #edeeef;
   --collor-details-cyan: #14cddd;
-  --collor-alternative--darkCyan: #185d6a;
-  --color-background:#12171A;
+  --collor-alternative--darkBlue: #64c8ff14;
+  --color-background: #12171a;
   --collor-alternative--darkCyan2: #097b8c;
   --collor-glass-transparent: rgba(255, 255, 255, 0.35);
-  --fonte-orbitron:'Orbitron', sans-serif;
+
 }
 
 .color_cyan {
   color: var(--collor-details-cyan);
   font-weight: 500;
-  
 }
 
 .section_global {
@@ -36,6 +36,6 @@
   padding: 15px 4%;
 }
 
-body{
+body {
   background-color: var(--color-background);
 }

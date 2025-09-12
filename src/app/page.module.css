@@ -11,3 +11,7 @@
     /*max-width: 1500px;*/
   }
 }
+.firstTitle .boxTitle,
+.firstTitle.boxTitle {
+  padding-bottom: 0px;
+}

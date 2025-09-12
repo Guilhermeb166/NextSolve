@@ -1,9 +1,11 @@
-.boxTitule {
-  padding: 50px 0;
+.boxTitle {
+  padding-top: 50px;
+  padding-bottom: 50px;
   width: 100%;
-
 }
-
+.noPaddingBottom  {
+  padding-bottom: 0px;
+}
 .dimensionTitle {
   position: relative;
   width: 600px;
@@ -21,8 +23,6 @@
   justify-content: center;
 }
 
-
-
 /* seta direita */
 .dimensionTitle::after {
   content: "";
@@ -36,7 +36,6 @@
   border-left: 40px solid #64c8ff14;
   transition: all 0.7s ease;
 }
-
 
 .dimensionTitle:hover {
   transform: translateY(-5px);
