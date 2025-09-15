@@ -3,13 +3,12 @@ import styles from "./NavigationH.module.css";
 
 export default function NavigationH() {
   const links = [
-    { href: "/", label: "Início" }, // Mais atual e limpo que "Home"
-    { href: "#quem-somos", label: "Quem Somos" }, // Mais institucional e acolhedor
-    { href: "#cards-services", label: "Serviços" }, // Traz ideia de rede e pertencimento
-    { href: "/servicos", label: "Soluções" }, // Soa mais moderno e orientado a valor
-    { href: "/projetos", label: "Iniciativas" }, // Passa inovação e movimento
-  ];
-
+    { href: "/", label: "Início" }, 
+    { href: "#quem-somos", label: "Quem Somos" },
+    { href: "#cards-services", label: "Serviços" }, 
+    { href: "/community", label: "Comunidade" },
+    { href: "/projetos", label: "Iniciativas" }, 
+  ]
   return (
     <nav className={styles.navContainer}>
       {links.map((link) => (

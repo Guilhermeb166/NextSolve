@@ -1,14 +1,30 @@
 "use client";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import styles from "./styles/Ilustration.module.css";
 
 export default function ImageIlustration() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkIsMobile();
+
+    window.addEventListener("resize", checkIsMobile);
+
+    return () => window.removeEventListener("resize", checkIsMobile);
+  }, []);
+
   return (
     <section className={styles.boxImage}>
       <div className={styles.dimensionImage}>
         <Image
           className={styles.ImageIlustration}
-          src={"/images/tec.png"}
+                            /* Trocar essa Imagem  */
+          src={isMobile ? "/images/Nextsolve-mobile.png" : "/images/Nextsolve.png"}
           alt="Image-NextSolve"
           fill
         />

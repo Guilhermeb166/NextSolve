@@ -1,11 +1,12 @@
 //Home
-import Image from "next/image";
+
 import styles from "./page.module.css";
 import ImageHome from "@/components/Home/ImageHome/ImageHome";
 import DescriptionH from "@/components/Home/Description/DescritionHome";
 import ImageIlustration from "@/components/ImageContent/Ilustration";
 import Title from "@/components/Title/Title";
 import CardsServices from "@/components/Home/CardsServices/CardsServices";
+import Reviews from "@/components/Home/Reviews/Reviews";
 
 export default function Home() {
   return (
@@ -18,6 +19,8 @@ export default function Home() {
       </section>
       <Title text="Serviços que Oferecemos" />
       <CardsServices />
+      <Title text="Comentários de Clientes" />
+      <Reviews/>
 
     </div>
   );
