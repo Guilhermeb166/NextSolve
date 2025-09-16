@@ -3,13 +3,14 @@
 import React from "react";
 import styles from "./community.module.css";
 
-// Importação dos components da página  
-import ImageIlustration from "@/components/ImageContent/Ilustration";
-import Description from "./DescriptionCommunity/Description";
+// Importação dos components da página
+import BannerInitial from "./Banner/BannerInitial";
+import Description from "./Descrition/Description";
 
 export default function Community() {
   return (
     <section className={styles.pageCommnunity}>
+      <BannerInitial />
       <Description />
     </section>
   );

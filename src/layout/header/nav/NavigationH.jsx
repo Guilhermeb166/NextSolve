@@ -7,7 +7,7 @@ export default function NavigationH() {
     { href: "#quem-somos", label: "Quem Somos" },
     { href: "#cards-services", label: "Serviços" }, 
     { href: "/community", label: "Comunidade" },
-    { href: "/projetos", label: "Iniciativas" }, 
+    { href: "/projetos", label: "Onde nos Encontrar" }, 
   ]
   return (
     <nav className={styles.navContainer}>

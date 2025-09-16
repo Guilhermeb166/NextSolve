@@ -1,14 +1,16 @@
 'use client'
 import styles from './Reviews.module.css'
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import {Swiper, SwiperSlide} from 'swiper/react'
 import {Navigation, Autoplay}  from "swiper/modules"
 import "swiper/css"
 import "swiper/css/navigation";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import ReviewForm from './ReviewForm/ReviewForm';
 
 export default function Reviews() {
+  const [showForm, setShowForm] = useState(false);
   const reviews = [
     {
       id:  1,
@@ -67,11 +69,13 @@ export default function Reviews() {
                   <p className={styles.name}>{r.name}</p>
                   <p className={styles.role}>{r.role}</p>
                 </div>
+                <button type='button' onClick={() => setShowForm(true)}>Deixe sua avaliação</button>
               </div>
             </SwiperSlide>
           ))}
 
         </Swiper>
+        {showForm && <ReviewForm onClose={() => setShowForm(false)} />}
     </section>
   )
 }

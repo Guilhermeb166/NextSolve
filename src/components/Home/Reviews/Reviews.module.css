@@ -14,7 +14,7 @@
   padding: 60px 61px;
   height: auto;
   position: relative;
-  box-shadow: 1px 1px 4px 0.5px var(--collor-details-cyan);
+  box-shadow: 0px 1px 5px 0.5px var(--collor-details-cyan);
 
   &::before {
   content: "";
