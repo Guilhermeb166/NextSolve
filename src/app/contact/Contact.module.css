@@ -1,0 +1,15 @@
+.contactPage{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+.title{
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+}

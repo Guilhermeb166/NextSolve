@@ -69,7 +69,7 @@ export default function Reviews() {
                   <p className={styles.name}>{r.name}</p>
                   <p className={styles.role}>{r.role}</p>
                 </div>
-                <button type='button' onClick={() => setShowForm(true)}>Deixe sua avaliação</button>
+                <button type='button' onClick={() => setShowForm(true)} className={styles.btnReview}>Deixe sua avaliação</button>
               </div>
             </SwiperSlide>
           ))}

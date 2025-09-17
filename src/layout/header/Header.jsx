@@ -16,19 +16,24 @@ export default function Header() {
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
   return (
     <header
       className={`${styles.Header} ${scrolled ? styles.HeaderScrolled : ""}`}
     >
       <section className="section_global">
         <section className={styles.contentHeader}>
-          
-          <Image className={styles.imgLogo} src="/images/NextSolve-logo.png" alt="logo NextSolve" width={250} height={50}/>
-         
+          {
+            <Image className={styles.imgLogo} src="/images/NextSolve-logo.png"
+              alt="logo NextSolve"
+              width={250}
+              height={50}
+            />
+          }
 
           <NavigationH />
 
-          <Link href="/" className={styles.linkButton}>
+          <Link href="/contact" className={styles.linkButton}>
             <button type="button" className={styles.BtnHeader}>
               Contato
             </button>
