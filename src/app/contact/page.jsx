@@ -1,29 +1,32 @@
-'use client'
+"use client";
 import { useEffect } from "react";
 import FormContact from "./formContact/FormContact";
-import styles from './Contact.module.css'
+import styles from "./Contact.module.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 export default function Contact() {
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      easing: "ease-out-quad",
+      once: false,
+      offset: 50,
+      useClassNames: true,
+    });
 
-   useEffect(() => {
-      AOS.init({
-        duration: 800,
-        easing: "ease-out-quad",
-        once: false,
-        offset: 50,
-        useClassNames: true,
-      });
-  
-      AOS.refresh();
-    }, []);
+    AOS.refresh();
+  }, []);
 
   return (
-    <div className={styles.contactPage} data-aos="fade-up"
-        data-aos-delay="0">
-          <h2 className={styles.title}>Entre em contato</h2>
-        <FormContact/>
+    <div className={styles.contactPage} data-aos="fade-up" data-aos-delay="0">
+      <h2 className={styles.title}>
+        Entre em{" "}
+        <span style={{ color: "var(--collor-details-cyan)", fontWeight: 700 }}>
+          Contato
+        </span>
+      </h2>
+      <FormContact />
     </div>
-  )
+  );
 }
