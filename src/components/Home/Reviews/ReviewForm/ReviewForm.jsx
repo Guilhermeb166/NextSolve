@@ -4,15 +4,35 @@
 import styles from './ReviewForm.module.css'
 import { IoMdCloseCircle } from "react-icons/io";
 import { useState } from 'react'
+import { enviarFeedback } from '@/backend/feedbackService'
 
 export default function ReviewForm({onClose}) {
 
     const [name, setName] = useState("")//nome que você digitar
     const [review, setReview] = useState("")//avaliação que você escrever
+    const [loading, setLoading] = useState(false)
+    const [error, setError] = useState("")
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()//nao recarrega a página ao enviar o form
-        onClose()//chama a função de fechar o form
+        setLoading(true)
+        setError("")
+        if(!name || !review){
+            alert("Preenche todos os campos do formulário")
+            setLoading(false) 
+            return 
+        }
+        try {
+            await enviarFeedback(name, review)
+            alert("Feedback enviado com sucesso!")
+            setName("")
+            setReview("")
+            onClose()//chama a função de fechar o form
+        } catch (err) {
+            setError("Erro ao enviar: " + err.message)
+        } finally {
+            setLoading(false)
+        }
     }
 
     return (

@@ -10,31 +10,13 @@ import "aos/dist/aos.css";
 import ReviewForm from "./ReviewForm/ReviewForm";
 import { SlUserFollowing } from "react-icons/sl";
 
+// Firestore
+import { db } from "@/backend/firebaseConfig";
+import { collection, query, orderBy, onSnapshot } from "firebase/firestore";
+
 export default function Reviews() {
   const [showForm, setShowForm] = useState(false);
-
-  //As Avaliações genericas
-  const reviews = [
-    {
-      id: 1,
-      name: "Yasmin Toscano",
-      role: "Cliente",
-      text: "Otimos profissionais, recomendo demais!!.",
-    },
-    {
-      id: 2,
-      name: "Kamilla Tavóra",
-      role: "Cliente",
-      text: "Total confiança e responsabilidade, empresa está de Parabéns",
-    },
-
-    {
-      id: 3,
-      name: "Vandinho Bezerra",
-      role: "Cliente",
-      text: "Solucionaram e fizeram reajustes no meu sistema, otima empresa!!",
-    },
-  ];
+  const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
     AOS.init({
@@ -48,17 +30,42 @@ export default function Reviews() {
     AOS.refresh();
   }, []);
 
+
+  // Busca comentários do Firebase em tempo real
+  useEffect(() => {
+    const q = query(
+      collection(db, "comentarios"),
+      orderBy("createdAt", "desc") // mais recentes primeiro
+    );
+
+    const unsubscribe = onSnapshot(q, (snapshot) => {
+      const fetchedReviews = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      setReviews(fetchedReviews);
+    });
+
+    return () => unsubscribe(); // limpa listener
+  }, []);
+
+  // Se não houver reviews, cria um card “vazio” para teste
+  const slides = reviews.length > 0
+    ? reviews
+    : [{ id: "empty", nome: "Nenhum comentário ainda", mensagem: "Clique no botão abaixo para enviar um feedback!" }];
+
   return (
     <section
       className={styles.ReviewsComponent}
       data-aos="fade-up"
       data-aos-delay="0"
     >
+      
       {/* O Carrossel de Avaliações */}
       <Swiper
         modules={[Navigation, Autoplay]}
         navigation
-        loop={true}
+        loop={reviews.length > 0}
         autoplay={{
           delay: 3000,
           disableOnInteraction: false,
@@ -72,7 +79,7 @@ export default function Reviews() {
       >
         {reviews.map((r) => (
           <SwiperSlide key={r.id} className={styles.slide}>
-            {/*Cards de avaliações */}
+            {/*Cards de avaliaçõ */}
             <div className={styles.card}>
               <span className={styles.quote}><SlUserFollowing /></span>
               <p className={styles.text}>{r.text}</p>
