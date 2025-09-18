@@ -62,7 +62,7 @@ export default function FormContact() {
 
   return (
     <div className={styles.formContainer}>
-      <div>
+   
         <form ref={form} onSubmit={handleSubmit} className={styles.formEmail}>
           <div>
             <label htmlFor="user_name" className={styles.formLabel}>
@@ -129,7 +129,7 @@ export default function FormContact() {
         <div className={styles.animation}>
           <ImageContact />
         </div>
-      </div>
+      
     </div>
   );
 }

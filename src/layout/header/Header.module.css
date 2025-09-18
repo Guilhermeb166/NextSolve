@@ -75,7 +75,7 @@
   transition: all 0.3s ease;
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .mobileMenuButton {
     display: flex;
   }
@@ -90,9 +90,11 @@
   }
 }
 
-@media (max-width: 480px) {
-  .contentHeader {
-    padding: 0 0.5rem;
+@media screen and (max-width: 480px) {
+  .Header{
+    .contentHeader {
+      padding: 0 0.5rem;
+    }
   }
   
   .imgLogo {

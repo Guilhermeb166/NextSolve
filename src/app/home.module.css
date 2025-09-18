@@ -15,3 +15,12 @@
 .firstTitle.boxTitle {
   padding-bottom: 0px;
 }
+
+@media (max-width: 768px) {
+  .page{
+    .divisionContent {
+      flex-direction: column;
+      padding-top: 10px;
+    }
+  }
+}

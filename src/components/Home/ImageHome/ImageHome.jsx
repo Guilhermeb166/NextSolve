@@ -139,17 +139,48 @@ export default function ImageHome() {
     triggerOnce: false,
   });
 
+  const [scale, setScale] = useState([1, 1, 0.9]);
+  const [cameraPos, setCameraPos] = useState([-5, 0, -15]);
+  const [positionGroup, setPositionGroup] = useState([3, -1, 0])
+
+  useEffect(() => {
+    function handleResize() {
+      if (window.innerWidth < 520){
+        setScale([0.5, 0.5, 0.4]);
+        setCameraPos([-5, 0, -9]);
+      }
+      else if (window.innerWidth < 768) {
+        setScale([0.6, 0.6, 0.5]);
+        setCameraPos([-5, 0, -10]);
+        setPositionGroup([0,-1,0])
+      }
+       else if (window.innerWidth < 1024) {
+        // tablets
+        setScale([0.8, 0.8, 0.7]);
+        setCameraPos([-4.5, 0, -13]);
+      } else {
+        // desktops
+        setScale([1, 1, 0.9]);
+        setCameraPos([-5, 0, -15]);
+      }
+    }
+
+    handleResize(); // chama no carregamento inicial
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <section className={styles.ImageHome} ref={ref}>
-      <Canvas camera={{ position: [-5, 0, -15], fov: 55 }}>
+      <Canvas camera={{ position: cameraPos, fov: 55 }}>
         {/*position → posição da câmera no espaço 3D (x, y, z).| fov: 50 → campo de visão da câmera,. */}
         <pointLight position={[10, 10, 10]} intensity={8.5} />
         {/*pointLight é como uma lâmpada que ilumina tudo ao redor. position é onde a lâmpada está. intensity é quão forte é a luz.*/}
         <Suspense fallback={null}>
           <group
             rotation={[0, 12.2, 0]}
-            position={[3, -1, 0]}
-            scale={[1, 1, 0.9]}
+            position={positionGroup}
+            scale={scale}
           >
             <Model resetAnimation={inView} />
           </group>

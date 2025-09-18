@@ -3,7 +3,7 @@
   padding-bottom: 50px;
   width: 100%;
 }
-.noPaddingBottom  {
+.noPaddingBottom {
   padding-bottom: 0px;
 }
 .dimensionTitle {
@@ -17,10 +17,6 @@
   padding: 0 20px;
   cursor: pointer;
   transition: all 0.7s ease;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 /* seta direita */
@@ -39,4 +35,18 @@
 
 .dimensionTitle:hover {
   transform: translateY(-5px);
+}
+
+@media (max-width: 768px) {
+  .boxTitle {
+    width: 100%;
+  }
+  .dimensionTitle {
+    width: 100%;
+  }
+  .TitleInform {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }

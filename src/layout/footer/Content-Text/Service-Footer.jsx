@@ -10,10 +10,10 @@ import { RiUserCommunityFill } from "react-icons/ri"; // Comunidade
 import { MdEmail } from "react-icons/md"; // E-mail
 
 const BtnLinks = [
-  { nome: <FaInstagram />, href: "/", label: "Instagram" },
-  { nome: <FaLinkedin />, href: "/", label: "LinkedIn" },
-  { nome: <RiUserCommunityFill />, href: "/", label: "Comunidade" },
-  { nome: <MdEmail />, href: "/", label: "E-mail" },
+  { nome: <FaInstagram />, href: "https://www.instagram.com/nextsolvestudio?igsh=MWdoY3Nid29sanJnaw%3D%3D&utm_source=qr ", label: "Instagram" },
+  { nome: <FaLinkedin />, href: "https://www.linkedin.com/in/nextsolve-studio-vision-39b540384/ ", label: "LinkedIn",},
+  { nome: <RiUserCommunityFill />, href: "https://chat.whatsapp.com/FCMvSHzTv1TI5odzDeX3a1?mode=ems_wa_t", label: "Comunidade" },
+  { nome: <MdEmail />, href: "/contact", label: "E-mail" },
 ];
 
 export default function Service_Footer() {

@@ -70,7 +70,7 @@ export default function Description() {
             conhecimento ou se atualizar sobre o mercado, nossa comunidade é o
             lugar certo para você.
           </p>
-            <a href="w" className={styles.btnLinkComunnity}>Entre para Comunidade</a>
+            <a href="https://chat.whatsapp.com/FCMvSHzTv1TI5odzDeX3a1?mode=ems_wa_t" target="blank" className={styles.btnLinkComunnity}>Entre para Comunidade</a>
         </div>
 
         <div className={styles.imageCommunity} data-aos="fade-left" data-aos-delay="200">
@@ -79,7 +79,6 @@ export default function Description() {
               src="/images/logo.jpeg"
               alt="Image-NextSolve"
               fill
-              
             />
           </div>
         </div>
