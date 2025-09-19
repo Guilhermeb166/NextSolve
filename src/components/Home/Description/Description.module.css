@@ -1,6 +1,6 @@
 .boxDescription {
   width: 50%;
-  height: 500px;
+  height: auto;
   background: var(--collor-alternative--darkBlue);
 
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.201);
@@ -57,7 +57,7 @@
 @media (max-width: 768px) {
   .boxDescription {
     width: 100%;
-    height: 600px;
+    height: auto;
     margin-top: 50px;
   }
 

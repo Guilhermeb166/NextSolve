@@ -142,8 +142,12 @@ export default function ImageHome() {
   const [scale, setScale] = useState([1, 1, 0.9]);
   const [cameraPos, setCameraPos] = useState([-5, 0, -15]);
   const [positionGroup, setPositionGroup] = useState([3, -1, 0])
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+
+    setIsMobile(window.innerWidth < 768);
+
     function handleResize() {
       if (window.innerWidth < 520){
         setScale([0.5, 0.5, 0.4]);
@@ -193,14 +197,16 @@ export default function ImageHome() {
           far={6.5}
           color="#14cddd"
         />
-        <OrbitControls /*permite girar o notebook com o mouse. */
-          enablePan={false} /*não permite arrastar o notebook. */
-          enableZoom={false} /*não permite dar zoom. */
-          minPolarAngle={Math.PI / 2.9}   // Limite inferior 
-          maxPolarAngle={Math.PI / 2.7} // Limite superior
-          minAzimuthAngle={0} // Limite esquerdo 
-          maxAzimuthAngle={0}  // Limite direito 
-        />
+        {!isMobile && (
+          <OrbitControls /*permite girar o notebook com o mouse. */
+            enablePan={false} /*não permite arrastar o notebook. */
+            enableZoom={false} /*não permite dar zoom. */
+            minPolarAngle={Math.PI / 2.9}   // Limite inferior 
+            maxPolarAngle={Math.PI / 2.7} // Limite superior
+            minAzimuthAngle={0} // Limite esquerdo 
+            maxAzimuthAngle={0}  // Limite direito 
+          />
+        )}
       </Canvas>
     </section>
   );

@@ -46,10 +46,10 @@ export default function Reviews() {
       setReviews(fetchedReviews);
     });
 
-    return () => unsubscribe(); // limpa listener
+    return () => unsubscribe();
   }, []);
 
-  // Se não houver reviews, cria um card “vazio” para teste
+  // Se não houver reviews, cria um card “vazio”
   const slides = reviews.length > 0
     ? reviews
     : [{ id: "empty", nome: "Nenhum comentário ainda", mensagem: "Clique no botão abaixo para enviar um feedback!" }];
@@ -60,8 +60,6 @@ export default function Reviews() {
       data-aos="fade-up"
       data-aos-delay="0"
     >
-      
-      {/* O Carrossel de Avaliações */}
       <Swiper
         modules={[Navigation, Autoplay]}
         navigation
@@ -77,15 +75,14 @@ export default function Reviews() {
         }}
         className={styles.swiper}
       >
-        {reviews.map((r) => (
+        {slides.map((r) => (
           <SwiperSlide key={r.id} className={styles.slide}>
-            {/*Cards de avaliaçõ */}
             <div className={styles.card}>
               <span className={styles.quote}><SlUserFollowing /></span>
-              <p className={styles.text}>{r.text}</p>
+              <p className={styles.text}>{r.mensagem}</p>
               <div>
-                <p className={styles.name}>{r.name}</p>
-                <p className={styles.role}>{r.role}</p>
+                <p className={styles.name}>{r.nome}</p>
+                <p className={styles.role}>{reviews.length > 0 ? "Cliente" : ""}</p>
               </div>
               <button
                 type="button"
@@ -98,6 +95,7 @@ export default function Reviews() {
           </SwiperSlide>
         ))}
       </Swiper>
+
       {showForm && <ReviewForm onClose={() => setShowForm(false)} />}
     </section>
   );

@@ -8,7 +8,7 @@ export default function NavigationH({ isOpen, onClose }) {
     { href: "#quem-somos", label: "Quem Somos" },
     { href: "#cards-services", label: "Serviços" },
     { href: "/community", label: "Comunidade" },
-    { href: "/projetos", label: "Onde nos Encontrar" },
+ /*    { href: "#footer", label: "Onde nos Encontrar" }, */
   ];
 
   return (

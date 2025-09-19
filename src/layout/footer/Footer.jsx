@@ -16,7 +16,7 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className={styles.Footer}>
+    <footer className={styles.Footer} id='footer'>
       <Service_Footer />
       <Produto_Footer />
     </footer>

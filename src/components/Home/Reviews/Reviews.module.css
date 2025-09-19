@@ -1,6 +1,6 @@
 .ReviewsComponent {
   width: 95%;
-  max-width: 1000px;
+  max-width: 900px;
   margin: 30px auto;
   background-color: var(--collor-alternative--darkBlue);
   border-radius: 16px;
@@ -85,9 +85,7 @@
 }
 
 @media (max-width: 768px) {
-  .ReviewsComponent {
-    width: 80%;
-  }
+ 
 
   .text {
     font-size: 15px;
