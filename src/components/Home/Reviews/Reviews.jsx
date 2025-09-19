@@ -17,6 +17,7 @@ import { collection, query, orderBy, onSnapshot } from "firebase/firestore";
 export default function Reviews() {
   const [showForm, setShowForm] = useState(false);
   const [reviews, setReviews] = useState([]);
+  const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
     AOS.init({
@@ -28,6 +29,16 @@ export default function Reviews() {
     });
 
     AOS.refresh();
+
+     const checkIsMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkIsMobile();
+    
+    window.addEventListener('resize', checkIsMobile);
+    
+    return () => window.removeEventListener('resize', checkIsMobile);
   }, []);
 
 
@@ -62,25 +73,14 @@ export default function Reviews() {
     >
       <Swiper
         modules={[Navigation, Autoplay]}
-        navigation
+        navigation={!isMobile}
         loop={reviews.length > 0}
         autoplay={{
           delay: 3000,
           disableOnInteraction: false,
         }}
         speed={1000}
-        breakpoints={{
-          0: {
-            spaceBetween: 10,
-            slidesPerView: 1,
-            navigation: false, 
-          },
-          768: {
-            spaceBetween: 20,
-            slidesPerView: 1,
-            navigation: true,
-          },
-        }}
+        
         style={{
           "--swiper-navigation-color": "#64C9FF6C",
           "--swiper-pagination-color": "#64C9FF6C",
