@@ -149,27 +149,34 @@ export default function ImageHome() {
     setIsMobile(window.innerWidth < 768);
 
     function handleResize() {
-      if (window.innerWidth < 390){
-        setCameraPos([-5, 0, -7]);
-        setPositionGroup([1,-1,0])
+      console.log("EXECUTANDO handleResize com o novo código!"); 
+      const width = window.innerWidth;
+      console.log(width); 
+      if (width < 400){
+        setScale([0.5, 0.5, 0.4]);
+        setCameraPos([-5, 0, -10]);
+        setPositionGroup([0,-1,0])
       }
-      else if (window.innerWidth < 520){
+      else if (width < 520){
         setScale([0.5, 0.5, 0.4]);
         setCameraPos([-5, 0, -9]);
+        setPositionGroup([0,-1,0])
       }
-      else if (window.innerWidth < 768) {
+      else if (width < 768) {
         setScale([0.6, 0.6, 0.5]);
         setCameraPos([-5, 0, -10]);
         setPositionGroup([0,-1,0])
       }
-       else if (window.innerWidth < 1024) {
+       else if (width < 1024) {
         // tablets
         setScale([0.8, 0.8, 0.7]);
         setCameraPos([-4.5, 0, -13]);
+        setPositionGroup([0,-1,0])
       } else {
         // desktops
         setScale([1, 1, 0.9]);
         setCameraPos([-5, 0, -15]);
+        setPositionGroup([0,-1,0])
       }
     }
 
