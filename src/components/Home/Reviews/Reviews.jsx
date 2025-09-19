@@ -69,6 +69,18 @@ export default function Reviews() {
           disableOnInteraction: false,
         }}
         speed={1000}
+        breakpoints={{
+          0: {
+            spaceBetween: 10,
+            slidesPerView: 1,
+            navigation: false, 
+          },
+          768: {
+            spaceBetween: 20,
+            slidesPerView: 1,
+            navigation: true,
+          },
+        }}
         style={{
           "--swiper-navigation-color": "#64C9FF6C",
           "--swiper-pagination-color": "#64C9FF6C",

@@ -8,7 +8,7 @@
 }
 .dimensionTitle {
   position: relative;
-  width: 600px;
+  width: 100%;
   height: 55px;
   background-color: #64c8ff14;
   color: #fff;
@@ -39,14 +39,21 @@
 
 @media (max-width: 768px) {
   .boxTitle {
-    width: 100%;
+    width: 80%;
   }
   .dimensionTitle {
     width: 100%;
   }
   .TitleInform {
+    font-size: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
   }
+}
+@media screen and (max-width: 380px){
+  .TitleInform{
+    font-size: 1.2rem;
+  }
+  
 }

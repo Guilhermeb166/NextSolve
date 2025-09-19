@@ -11,6 +11,7 @@
   font-weight: 400;
   font-style: normal;
   text-decoration: none;
+  max-width: 100%;
 }
 
 :root {
@@ -39,11 +40,4 @@
 body {
   background-color: var(--color-background);
   max-width: 100%;
-}
-
-
-@media (max-width: 768px) {
-  body {
-    max-width: 100%;
-  }
 }
