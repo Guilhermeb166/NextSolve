@@ -150,8 +150,8 @@ export default function ImageHome() {
 
     function handleResize() {
       if (window.innerWidth < 390){
-        setScale([0.5, 0.5, 0.4]);
-        setCameraPos([-10, 0, -9]);
+        setCameraPos([-5, 0, -7]);
+        setPositionGroup([1,-1,0])
       }
       else if (window.innerWidth < 520){
         setScale([0.5, 0.5, 0.4]);
