@@ -24,10 +24,10 @@ export default function ReviewForm({onClose}) {
         }
         try {
             await enviarFeedback(name, review)
-            alert("Feedback enviado com sucesso!")
+            // alert("Feedback enviado com sucesso!")
             setName("")
             setReview("")
-            onClose()//chama a função de fechar o form
+            onClose()
         } catch (err) {
             setError("Erro ao enviar: " + err.message)
         } finally {

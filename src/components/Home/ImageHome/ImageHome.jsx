@@ -182,7 +182,7 @@ export default function ImageHome() {
         {/*pointLight é como uma lâmpada que ilumina tudo ao redor. position é onde a lâmpada está. intensity é quão forte é a luz.*/}
         <Suspense fallback={null}>
           <group
-            rotation={[0, 12.2, 0]}
+            rotation={isMobile ? [12.3, 3.45, 0] : [0, 12.2, 0]}
             position={positionGroup}
             scale={scale}
           >
