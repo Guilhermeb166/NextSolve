@@ -149,7 +149,11 @@ export default function ImageHome() {
     setIsMobile(window.innerWidth < 768);
 
     function handleResize() {
-      if (window.innerWidth < 520){
+      if (window.innerWidth < 390){
+        setScale([0.5, 0.5, 0.4]);
+        setCameraPos([-10, 0, -9]);
+      }
+      else if (window.innerWidth < 520){
         setScale([0.5, 0.5, 0.4]);
         setCameraPos([-5, 0, -9]);
       }
