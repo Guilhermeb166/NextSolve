@@ -11,7 +11,8 @@ export default function ImageContact() {
       alt="Animação de campanha de email"
       width={500}
       height={500}
-      priority
+      loading="lazy" // carrega apenas quando entra no viewport
+      
     />
   )
 }
