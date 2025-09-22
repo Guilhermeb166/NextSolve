@@ -1,10 +1,10 @@
 "use client";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import styles from "./FormContact.module.css";
 import emailjs from "@emailjs/browser";
 import Loading from "@/utils/loading/Loading";
 import ImageContact from "../imageContact/ImageContact";
-//import AOS from "aos";
+import AOS from "aos";
 import "aos/dist/aos.css";
 
 export default function FormContact() {
@@ -62,7 +62,7 @@ export default function FormContact() {
     }
   };
 
-  /*useEffect(() => {
+  useEffect(() => {
     AOS.init({
       duration: 800,
       easing: "ease-out-quad",
@@ -72,10 +72,10 @@ export default function FormContact() {
     });
 
     AOS.refresh();
-  }, []);*/
+  }, []);
 
   return (
-    <div className={styles.formContainer}>
+    <div className={styles.formContainer} data-aos="fade-up" data-aos-delay="0">
    
         <form ref={form} onSubmit={handleSubmit} className={styles.formEmail}>
           <div>
@@ -140,7 +140,7 @@ export default function FormContact() {
             </div>
           )}
         </form>
-        <div className={styles.animation}>
+        <div className={styles.animation} data-aos="fade-up" data-aos-delay="0">
           <ImageContact />
         </div>
       
