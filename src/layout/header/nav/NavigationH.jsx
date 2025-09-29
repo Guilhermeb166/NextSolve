@@ -5,8 +5,8 @@ import styles from "./NavigationH.module.css";
 export default function NavigationH({ isOpen, onClose }) {
   const links = [
     { href: "/", label: "Início" },
-    { href: "#quem-somos", label: "Quem Somos" },
-    { href: "#cards-services", label: "Serviços" },
+    { href: "/#quem-somos", label: "Quem Somos" },
+    { href: "/#cards-services", label: "Serviços" },
     { href: "/community", label: "Comunidade" },
  /*    { href: "#footer", label: "Onde nos Encontrar" }, */
   ];

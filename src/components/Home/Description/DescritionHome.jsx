@@ -2,6 +2,7 @@
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Link from "next/link";
 import styles from "./Description.module.css";
 
 export default function Description() {
@@ -58,12 +59,12 @@ export default function Description() {
         <br />
         <br />
         <div className={styles.btnsHom}>
-          <button
-            type="button"
+          <Link href="/contact"
+            
             className={styles.button}
           >
             Fale Conosco
-          </button>
+          </Link>
           <button
             type="button"
             className={styles.button}    

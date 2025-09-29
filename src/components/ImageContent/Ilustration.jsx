@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import styles from "./styles/Ilustration.module.css";
+import styles from "./Ilustration.module.css";
 
 export default function ImageIlustration() {
   const [isMobile, setIsMobile] = useState(false);
