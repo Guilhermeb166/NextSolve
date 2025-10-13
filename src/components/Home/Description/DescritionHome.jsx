@@ -2,7 +2,7 @@
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Link from "next/link";
+import Link from "next/link"; // Já importado, mas essencial!
 import styles from "./Description.module.css";
 
 export default function Description() {
@@ -59,18 +59,21 @@ export default function Description() {
         <br />
         <br />
         <div className={styles.btnsHom}>
-          <Link href="/contact"
-            
+          {/* Botão Fale Conosco (mantido) */}
+          <Link 
+            href="/contact"
             className={styles.button}
           >
             Fale Conosco
           </Link>
-          <button
-            type="button"
-            className={styles.button}    
+          
+          {/* BOTÃO APRESENTAR PROPOSTA: ALTERADO PARA LINK */}
+          <Link
+            href="/proposal" // APONTA PARA A ROTA QUE VOCÊ CRIOU
+            className={styles.button} 
           >
             Apresentar Proposta
-          </button>
+          </Link>
         </div>
       </div>
     </div>
