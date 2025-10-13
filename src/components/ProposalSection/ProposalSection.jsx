@@ -18,8 +18,8 @@ export default function ProposalSection() {
   const [isLoading, setIsLoading] = useState(false);
   const [status, setStatus] = useState("");
 
-  const SERVICE_ID = process.env.NEXT_PUBLIC_PROPOSAL_SERVICE_ID;
-  const TEMPLATE_ID = process.env.NEXT_PUBLIC_PROPOSAL_TEMPLATE_ID;
+  const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+  const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
   const PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY; 
 
   const handleChange = (e) => {
