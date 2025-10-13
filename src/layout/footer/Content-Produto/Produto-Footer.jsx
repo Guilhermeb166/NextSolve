@@ -11,7 +11,7 @@ import MdDesign from "react-icons/md/MdDesign";
  */
 export default function ProdutoFooter() {
   const ServiceLinks = [
-    { nome: "Startup: North Shopping Prédio II - Fortaleza-CE", /* icon: <MdLocationOn />, */ href: "/webSite" },
+    { nome: "Startup: Sediada em Fortaleza-CE", /* icon: <MdLocationOn />, */ href: "/webSite" },
     { nome: "E-mail comercial: equipe.nextsolvesolution@gmail.com", /* icon: <MdEmail /> */ href: "/desApp" },
     { nome: "Contato para Suporte (Agente IA): 85 99727-6499", /* icon: <MdSupport />, */ href: "/webPag" },
     { nome: "Serviços de Design e Marketing", /* icon: <MdDesign />, */ href: "/sociMid" },

@@ -2,6 +2,18 @@
   "name": "next-solve",
   "version": "0.1.0",
   "private": true,
+  "description": "First, run the development server:",
+  "homepage": "https://github.com/Guilhermeb166/NextSolve#readme",
+  "bugs": {
+    "url": "https://github.com/Guilhermeb166/NextSolve/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Guilhermeb166/NextSolve.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "main": "index.js",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
