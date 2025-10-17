@@ -11,7 +11,7 @@ export default function Header() {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 100);
+    const handleScroll = () => setScrolled(window.scrollY > 20);
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
       console.log('Is mobile:', window.innerWidth < 768); // Para debug

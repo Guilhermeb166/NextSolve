@@ -4,10 +4,11 @@ import styles from "./ProposalSection.module.css";
 import emailjs from "@emailjs/browser";
 import Loading from "@/utils/loading/Loading"; 
 import useAOS from '../../utils/useAOS'
+import formatCurrency  from "@/utils/FormatCurrency";
 
 export default function ProposalSection() {
   useAOS()
-  
+
   const form = useRef();
   const [formData, setFormData] = useState({
     user_name: "",
@@ -25,10 +26,18 @@ export default function ProposalSection() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
+    if (name === "budget") {
+      const formattedValue = formatCurrency(value);
+      setFormData((prevState) => ({
+        ...prevState,
+        [name]: formattedValue,
+      }));
+    } else {
+      setFormData((prevState) => ({
+        ...prevState,
+        [name]: value,
+      }));
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -76,40 +85,40 @@ export default function ProposalSection() {
         <h1 className={styles.title} data-aos="fade-right">
             Apresentar <span className={styles.titleHighlight}>Proposta</span>
         </h1>
-        <p className={styles.subtitle} data-aos="fade-right" data-aos-delay="200">
+        <p className={styles.subtitle} data-aos="fade-right">
             Descreva seu projeto para a NextSolve. Estamos prontos para inovar.
         </p>
       </div>
 
-      <form ref={form} onSubmit={handleSubmit} className={styles.formProposal} data-aos="fade-up" data-aos-delay="400">
+      <form ref={form} onSubmit={handleSubmit} className={styles.formProposal} data-aos="fade-up">
         
         {/* Bloco de Dados de Contato */}
         <div className={styles.formGroup}>
-          <label htmlFor="user_name" className={styles.formLabel}>Nome *</label>
-          <input type="text" id="user_name" name="user_name" value={formData.user_name} onChange={handleChange} required className={styles.input} placeholder="Seu nome completo" />
+          <label htmlFor="user_name" className={styles.formLabel}>Nome</label>
+          <input type="text" id="user_name" name="user_name" value={formData.user_name} onChange={handleChange} required className={styles.input} placeholder="Seu nome" />
         </div>
 
         <div className={styles.formGroup}>
-          <label htmlFor="user_email" className={styles.formLabel}>Email *</label>
+          <label htmlFor="user_email" className={styles.formLabel}>Email</label>
           <input type="email" id="user_email" name="user_email" value={formData.user_email} onChange={handleChange} required className={styles.input} placeholder="seu.email@exemplo.com" />
         </div>
 
         <div className={styles.formGroup}>
           <label htmlFor="company_name" className={styles.formLabel}>Nome da Empresa/Startup</label>
-          <input type="text" id="company_name" name="company_name" value={formData.company_name} onChange={handleChange} className={styles.input} placeholder="Ex: NextSolve Tech" />
+          <input type="text" id="company_name" name="company_name" value={formData.company_name} onChange={handleChange} className={styles.input} placeholder="Nome da sua empresa" />
         </div>
 
         {/* Bloco de Detalhes da Proposta */}
         <h2 className={styles.sectionTitle}>Detalhes do Projeto</h2>
 
         <div className={styles.formGroup}>
-          <label htmlFor="project_details" className={styles.formLabel}>Escopo e Objetivos da Proposta *</label>
+          <label htmlFor="project_details" className={styles.formLabel}>Escopo e Objetivos da Proposta</label>
           <textarea id="project_details" name="project_details" value={formData.project_details} onChange={handleChange} required rows="8" className={`${styles.input} ${styles.textarea}`} placeholder="Descreva o problema que deseja resolver e os resultados esperados..." />
         </div>
         
         <div className={styles.formGroup}>
           <label htmlFor="budget" className={styles.formLabel}>Orçamento Estimado (Opcional)</label>
-          <input type="text" id="budget" name="budget" value={formData.budget} onChange={handleChange} className={styles.input} placeholder="Ex: R$ 10.000 - R$ 20.000 ou Aberto a negociação" />
+          <input type="text" id="budget" name="budget" value={formData.budget} onChange={handleChange} className={styles.input} placeholder="Ex: R$ 0,00" inputMode="numeric"/>
         </div>
 
         {/* Botão de Envio */}
