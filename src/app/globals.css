@@ -45,8 +45,7 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-  -webkit-text-fill-color: #f0f0f0 !important; /* Cor do texto */
-  /*-webkit-box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.2) inset !important; /* Cor do fundo (truque com box-shadow) */
-  transition: background-color 5000s ease-in-out 0s; /* Evita que o navegador mude a cor */
+  -webkit-text-fill-color: #f0f0f0; 
+  transition: background-color 5000s ease-in-out 0s;
   border: 1px solid #ffffff33;
 }

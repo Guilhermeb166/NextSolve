@@ -1,4 +1,3 @@
-//Layout.jsx -Tudo que você coloca nele envolve todas as páginas, somente será colocado header e footer.
 import "./globals.css";
 import Header from "@/layout/header/Header";
 import Footer from "@/layout/footer/Footer";

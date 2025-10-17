@@ -43,7 +43,6 @@ export default function ProposalSection() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    // Validação dos campos obrigatórios
     if (!formData.user_name || !formData.user_email || !formData.project_details) {
       setStatus("Por favor, preencha todos os campos obrigatórios (*).");
       return;
@@ -77,7 +76,6 @@ export default function ProposalSection() {
     }
   };
 
-
   return (
     <div className={styles.sectionContainer} data-aos="fade-up">
       
@@ -108,7 +106,6 @@ export default function ProposalSection() {
           <input type="text" id="company_name" name="company_name" value={formData.company_name} onChange={handleChange} className={styles.input} placeholder="Nome da sua empresa" />
         </div>
 
-        {/* Bloco de Detalhes da Proposta */}
         <h2 className={styles.sectionTitle}>Detalhes do Projeto</h2>
 
         <div className={styles.formGroup}>
@@ -121,7 +118,6 @@ export default function ProposalSection() {
           <input type="text" id="budget" name="budget" value={formData.budget} onChange={handleChange} className={styles.input} placeholder="Ex: R$ 0,00" inputMode="numeric"/>
         </div>
 
-        {/* Botão de Envio */}
         <div>
           <button
             type="submit"
@@ -132,7 +128,6 @@ export default function ProposalSection() {
           </button>
         </div>
 
-        {/* Status Message */}
         {status && (
           <div className={`${styles.statusMessage} ${status.includes("sucesso") ? styles.statusSuccess : styles.statusError}`}>
             {status}

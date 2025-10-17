@@ -8,7 +8,7 @@ import useAOS from "@/utils/useAOS";
 
 export default function FormContact() {
   useAOS()
-  
+
   const form = useRef();
   const [formData, setFormData] = useState({
     user_name: "",
@@ -131,7 +131,7 @@ export default function FormContact() {
             </div>
           )}
         </form>
-        <div className={styles.animation} data-aos="fade-up" data-aos-delay="0">
+        <div className={styles.animation} data-aos="fade-up">
           <ImageContact />
         </div>
       

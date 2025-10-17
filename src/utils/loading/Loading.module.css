@@ -1,8 +1,8 @@
-.loading {
+.loadingIcon {
     animation: rotate 1s linear infinite;
     font-size: 2rem;
     margin: auto;
-    color: #000
+    color: #ffffff
 }
 @keyframes rotate{
     0% {
