@@ -113,10 +113,10 @@ export default function ProposalSection() {
           <textarea id="project_details" name="project_details" value={formData.project_details} onChange={handleChange} required rows="8" className={`${styles.input} ${styles.textarea}`} placeholder="Descreva o problema que deseja resolver e os resultados esperados..." />
         </div>
         
-        <div className={styles.formGroup}>
+        {/*<div className={styles.formGroup}>
           <label htmlFor="budget" className={styles.formLabel}>Orçamento Estimado (Opcional)</label>
           <input type="text" id="budget" name="budget" value={formData.budget} onChange={handleChange} className={styles.input} placeholder="Ex: R$ 0,00" inputMode="numeric"/>
-        </div>
+        </div>*/}
 
         <div>
           <button
