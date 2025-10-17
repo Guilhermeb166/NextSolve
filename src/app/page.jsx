@@ -1,5 +1,4 @@
 //Home
-
 import styles from "./home.module.css";
 import ImageHome from "@/components/Home/ImageHome/ImageHome";
 import DescriptionH from "@/components/Home/Description/DescritionHome";

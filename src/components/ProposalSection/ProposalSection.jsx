@@ -1,12 +1,13 @@
 "use client";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import styles from "./ProposalSection.module.css"; 
 import emailjs from "@emailjs/browser";
 import Loading from "@/utils/loading/Loading"; 
-import AOS from "aos";
-import "aos/dist/aos.css";
+import useAOS from '../../utils/useAOS'
 
 export default function ProposalSection() {
+  useAOS()
+  
   const form = useRef();
   const [formData, setFormData] = useState({
     user_name: "",
@@ -67,16 +68,11 @@ export default function ProposalSection() {
     }
   };
 
-  useEffect(() => {
-    AOS.init({ duration: 800, easing: "ease-out-quad", once: false, offset: 50, useClassNames: true });
-    AOS.refresh();
-  }, []);
 
   return (
     <div className={styles.sectionContainer} data-aos="fade-up">
       
       <div className={styles.header}>
-        {/* Título com destaque ciano para 'Proposta' */}
         <h1 className={styles.title} data-aos="fade-right">
             Apresentar <span className={styles.titleHighlight}>Proposta</span>
         </h1>

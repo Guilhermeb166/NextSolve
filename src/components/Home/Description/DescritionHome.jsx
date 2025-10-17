@@ -1,22 +1,10 @@
 "use client";
-import { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import Link from "next/link"; // Já importado, mas essencial!
+import useAOS from "@/utils/useAOS";
+import Link from "next/link";
 import styles from "./Description.module.css";
 
 export default function Description() {
-  useEffect(() => {
-    AOS.init({
-      duration: 800,
-      easing: "ease-out-quad",
-      once: false,
-      offset: 50,
-      useClassNames: true,
-    });
-
-    AOS.refresh();
-  }, []);
+  useAOS()
 
   return (
     <div

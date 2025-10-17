@@ -10,7 +10,7 @@ import Produto_Footer from './Content-Produto/Produto-Footer'
 export default function Footer() {
   useEffect(() => {
     AOS.init({
-      duration: 1000,
+      duration: 300,
       once: true,
     });
   }, []);
