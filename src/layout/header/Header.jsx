@@ -5,11 +5,15 @@ import Link from "next/link";
 import NavigationH from "./nav/NavigationH";
 import Sidebar from "./sideBar/SideBar";
 import Image from "next/image";
+import ChatWidget from "@/components/ChatBot/ChatWidget";
 
 
 export default function Header({ onChatToggle }) {
   const [scrolled, setScrolled] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [isChatOpen, setIsChatOpen] = useState(false);
+
+  const toggleChat = () => setIsChatOpen((prev) => !prev);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -57,7 +61,7 @@ export default function Header({ onChatToggle }) {
               <button
                 type="button"
                 className={styles.BtnHeader} // mesmo estilo do botão 'contato'
-                onClick={onChatToggle}
+                onClick={toggleChat}
               >
                 Chat
               </button>
@@ -67,6 +71,7 @@ export default function Header({ onChatToggle }) {
           
         </section>
       </section>
+      <ChatWidget isOpen={isChatOpen} onClose={toggleChat} />
     </header>
   );
 }
