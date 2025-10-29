@@ -1,12 +1,13 @@
 "use client";
 import { useEffect, useState } from "react";
 import styles from "./Header.module.css";
-import Link from "next/link";
+import Link from "next/link"; 
 import NavigationH from "./nav/NavigationH";
 import Sidebar from "./sideBar/SideBar";
 import Image from "next/image";
 
-export default function Header() {
+
+export default function Header({ onChatToggle }) {
   const [scrolled, setScrolled] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -14,13 +15,11 @@ export default function Header() {
     const handleScroll = () => setScrolled(window.scrollY > 100);
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
-      console.log('Is mobile:', window.innerWidth < 768); // Para debug
     };
 
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", handleResize);
     
-    // Verificar tamanho inicial
     handleResize();
 
     return () => {
@@ -47,12 +46,25 @@ export default function Header() {
           {isMobile && <Sidebar />}
 
           {!isMobile && (
-            <Link href="/contact" className={styles.linkButton}>
-              <button type="button" className={styles.BtnHeader}>
-                Contato
+            <div className={styles.buttonsContainer}>
+              
+              <Link href="/contact" className={styles.linkButton}>
+                <button type="button" className={styles.BtnHeader}>
+                  Contato
+                </button>
+              </Link>
+              
+              <button
+                type="button"
+                className={styles.BtnHeader} // mesmo estilo do botão 'contato'
+                onClick={onChatToggle}
+              >
+                Chat
               </button>
-            </Link>
+
+            </div>
           )}
+          
         </section>
       </section>
     </header>

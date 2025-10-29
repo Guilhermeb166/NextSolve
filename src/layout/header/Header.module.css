@@ -101,4 +101,9 @@
     width: 120px;
     height: 18px;
   }
+  .buttonsContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px; 
+}
 }

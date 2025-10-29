@@ -1,5 +1,3 @@
-//Home
-
 import styles from "./home.module.css";
 import ImageHome from "@/components/Home/ImageHome/ImageHome";
 import DescriptionH from "@/components/Home/Description/DescritionHome";
@@ -8,8 +6,10 @@ import Title from "@/components/Title/Title";
 import CardsServices from "@/components/Home/CardsServices/CardsServices";
 import Reviews from "@/components/Home/Reviews/Reviews";
 
+
 export default function Home() {
   return (
+    <>
     <div className={styles.page}>
       <ImageIlustration />
       <Title text="Sobre nossa Empresa" noPaddingBottom  />
@@ -23,5 +23,6 @@ export default function Home() {
       <Reviews/>
 
     </div>
+    </>
   );
 }
