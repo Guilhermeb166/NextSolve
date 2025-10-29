@@ -1,12 +1,9 @@
 "use client";
 import styles from "./CardsServices.module.css";
-import { useEffect } from "react";
-import AOS from "aos";
+import useAOS from "@/utils/useAOS";
 import { FaWordpress, FaLaptopCode, FaPaintbrush } from "react-icons/fa6";
 import { MdOutlineSecurity, MdDeveloperMode } from "react-icons/md";
 import { GiArtificialIntelligence } from "react-icons/gi";
-
-import "aos/dist/aos.css";
 
 const services = [
   {
@@ -45,17 +42,7 @@ const services = [
 ];
 
 export default function CardsServices() {
-  useEffect(() => {
-    AOS.init({
-      duration: 800,
-      easing: "ease-out-quad",
-      once: false,
-      offset: 50,
-      useClassNames: true,
-    });
-
-    AOS.refresh();
-  }, []);
+  useAOS()
 
   return (
     <section className={styles.boxServices} id="cards-services">

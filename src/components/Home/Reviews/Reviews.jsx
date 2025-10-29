@@ -5,8 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import useAOS from "@/utils/useAOS";
 import ReviewForm from "./ReviewForm/ReviewForm";
 import { SlUserFollowing } from "react-icons/sl";
 
@@ -20,16 +19,6 @@ export default function Reviews() {
   const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
-    AOS.init({
-      duration: 800,
-      easing: "ease-out-quad",
-      once: false,
-      offset: 50,
-      useClassNames: true,
-    });
-
-    AOS.refresh();
-
      const checkIsMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
@@ -41,6 +30,7 @@ export default function Reviews() {
     return () => window.removeEventListener('resize', checkIsMobile);
   }, []);
 
+  useAOS()
 
   // Busca comentários do Firebase em tempo real
   useEffect(() => {

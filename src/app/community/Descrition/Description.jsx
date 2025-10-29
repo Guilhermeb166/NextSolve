@@ -1,9 +1,7 @@
 "use client";
-import Link from "next/link";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import useAOS from "@/utils/useAOS";
 import styles from "./Description.module.css";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 
 import { MdWeb } from "react-icons/md";
@@ -14,14 +12,15 @@ import { GiSuitcase } from "react-icons/gi";
 import { PiShareNetworkLight } from "react-icons/pi";
 
 export default function Description() {
+  useAOS()
   const [isMobile, setIsMobile] = useState(false);
 
-  useEffect(() => { AOS.init({ duration: 800, easing: "ease-out-quad", once: true, offset: 50, });
-
+  useEffect(() => { 
     const checkIsMobile = () => { setIsMobile(window.innerWidth <= 768);};
     checkIsMobile();
     window.addEventListener("resize", checkIsMobile);
-    return () => window.removeEventListener("resize", checkIsMobile);}, []);
+    return () => window.removeEventListener("resize", checkIsMobile);
+  }, []);
 
   const communityItems = [
     { icon: <PiShareNetworkLight size={24} />, title: "Networking", description: "Conexão entre profissionais e troca de experiências", delay: 200, },
@@ -40,7 +39,7 @@ export default function Description() {
         <div
           className={styles.description}
           data-aos="fade-right"
-          data-aos-delay="100">
+          >
           <h1 className={styles.titleDescription}>Comunidade de <span className="color_cyan">Tecnologia</span> e Desenvolvimento</h1>
 
           <p className={styles.paragraf}>
@@ -73,7 +72,7 @@ export default function Description() {
             <a href="https://chat.whatsapp.com/FCMvSHzTv1TI5odzDeX3a1?mode=ems_wa_t" target="blank" className={styles.btnLinkComunnity}>Entre para Comunidade</a>
         </div>
 
-        <div className={styles.imageCommunity} data-aos="fade-left" data-aos-delay="200">
+        <div className={styles.imageCommunity} data-aos="fade-left" >
           <div className={styles.dimensionImage}>
             <Image
               src="/images/logo.jpeg"

@@ -5,6 +5,7 @@ import ImageIlustration from "@/components/ImageContent/Ilustration";
 import Title from "@/components/Title/Title";
 import CardsServices from "@/components/Home/CardsServices/CardsServices";
 import Reviews from "@/components/Home/Reviews/Reviews";
+import PageLoader from "@/components/PageLoader/PageLoader";
 
 
 export default function Home() {

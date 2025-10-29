@@ -4,9 +4,10 @@
   width: 100%;
   padding-inline: 20px;
   justify-content: space-around;
+  backdrop-filter: blur(10px);
 }
 .formEmail{
-  background: rgba(45, 48, 56, 0.4);
+  background: #2d303866;
   border-radius: 16px;
   padding: 30px;
   width: 100%;
@@ -29,7 +30,7 @@
   width: 100%;
   padding: 12px;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
+  border-radius: 6px;
   background-color: rgba(0, 0, 0, 0.2);
   color: #f0f0f0;
   font-size: 1rem;

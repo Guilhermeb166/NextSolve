@@ -42,7 +42,7 @@ function Model({ startY = 5, targetY = 1, resetAnimation }) {
       group.current.position.y = THREE.MathUtils.lerp(
         group.current.position.y,
         targetY,
-        0.02,
+        0.06,
       ); //0.05 -> Velocidade da interpolação
       if (Math.abs(group.current.position.y - targetY) < 0.01) {
         setEntered(true);
@@ -199,7 +199,7 @@ export default function ImageHome() {
           >
             <Model resetAnimation={inView} />
           </group>
-          <Environment preset="city" />
+          <Environment files="/hdri/potsdamer_platz_1k.hdr" />
         </Suspense>
         <ContactShadows
           position={[0, -3, 0]}

@@ -1,6 +1,3 @@
-"use client";
-import { useState } from "react"; 
-
 import "./globals.css";
 import Header from "@/layout/header/Header";
 import Footer from "@/layout/footer/Footer";
