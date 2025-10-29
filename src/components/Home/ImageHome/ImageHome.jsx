@@ -199,7 +199,7 @@ export default function ImageHome() {
           >
             <Model resetAnimation={inView} />
           </group>
-          <Environment preset="city" />
+          <Environment files="/hdri/potsdamer_platz_1k.hdr" />
         </Suspense>
         <ContactShadows
           position={[0, -3, 0]}
