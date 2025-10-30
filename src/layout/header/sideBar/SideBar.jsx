@@ -2,9 +2,13 @@
 import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import styles from "./SideBar.module.css";
+import ChatWidget from "@/components/ChatBot/ChatWidget";
 
 export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isChatOpen, setIsChatOpen] = useState(false);
+
+  const toggleChat = () => setIsChatOpen((prev) => !prev);
 
   const links = [
     { href: "/", label: "Início" },
@@ -61,9 +65,13 @@ export default function Sidebar() {
             <button type="button" className={styles.contactBtn}>
               Contato
             </button>
+            <button onClick={toggleChat} type="button" className={styles.contactBtn}>
+              Chat
+            </button>
           </Link>
         </nav>
       </aside>
+      <ChatWidget isOpen={isChatOpen} onClose={toggleChat} />
     </div>
   );
 }

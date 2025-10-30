@@ -3,17 +3,17 @@ import Link from 'next/link';
 import styles from './Product-Footer.module.css'
 
 // Importação individual dos ícones
-/* import MdLocationOn from "react-icons/md/MdLocationOn";
-import MdEmail from "react-icons/md/MdEmail";
-import MdSupport from "react-icons/md/MdSupport";
-import MdDesign from "react-icons/md/MdDesign";
- */
+import {MdLocationOn} from "react-icons/md";
+import { MdEmail} from "react-icons/md";
+import {MdSupport} from "react-icons/md";
+import {MdDesignServices } from "react-icons/md";
+ 
 export default function ProdutoFooter() {
   const ServiceLinks = [
-    { nome: "Startup: Sediada em Fortaleza-CE", /* icon: <MdLocationOn />, */ href: "/webSite" },
-    { nome: "E-mail comercial: equipe.nextsolvesolution@gmail.com", /* icon: <MdEmail /> */ href: "/desApp" },
-    { nome: "Contato para Suporte (Agente IA): 85 99727-6499", /* icon: <MdSupport />, */ href: "/webPag" },
-    { nome: "Serviços de Design e Marketing", /* icon: <MdDesign />, */ href: "/sociMid" },
+    { nome: "Startup: Sediada em Fortaleza-CE", icon: <MdLocationOn />,  },
+    { nome: "E-mail comercial: equipe.nextsolvesolution@gmail.com",  icon: <MdEmail />  },
+    { nome: "Contato para Suporte (Agente IA): 85 99727-6499",  icon: <MdSupport />,   },
+    { nome: "Serviços de Design e Marketing", icon: <MdDesignServices  />,   },
   ];
 
   return (
@@ -29,9 +29,9 @@ export default function ProdutoFooter() {
             data-aos="fade-left" 
             data-aos-delay={(index + 2) * 100}
           >
-            <Link className={styles.link} href={service.href}>
+            <p className={styles.link}>
               {service.icon} {service.nome}
-            </Link>
+            </p>
           </li>
         ))}
       </ul>

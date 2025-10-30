@@ -13,7 +13,7 @@
     position: relative;
     align-items: center;
     justify-content: space-between;
-    padding: 0 1rem;
+
   }
 }
 
@@ -33,8 +33,14 @@
   z-index: 999;
 }
 
-.linkButton {
+.buttonsContainer {
+  display: flex;
+  align-items: center;
   width: 170px;
+  gap: 10px;
+}
+
+.linkButton {
   z-index: 999;
 }
 
@@ -52,6 +58,17 @@
 .BtnHeader:hover {
   background-color: var(--collor-details-cyan);
   color: var(--color-background);
+}
+
+.iconChat {
+  color: var(--collor-secundary-white);
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all .5s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+  }
 }
 
 .mobileMenuButton {
@@ -79,11 +96,11 @@
   .mobileMenuButton {
     display: flex;
   }
-  
+
   .linkButton {
-    display: none; 
+    display: none;
   }
-  
+
   .imgLogo {
     width: 140px;
     height: 20px;
@@ -91,19 +108,18 @@
 }
 
 @media screen and (max-width: 480px) {
-  .Header{
+  .Header {
     .contentHeader {
       padding: 0 0.5rem;
     }
   }
-  
+
   .imgLogo {
     width: 120px;
     height: 18px;
   }
+
   .buttonsContainer {
-  display: flex;
-  align-items: center;
-  gap: 10px; 
-}
+    gap: 10px;
+  }
 }

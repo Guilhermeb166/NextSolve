@@ -6,9 +6,10 @@ import NavigationH from "./nav/NavigationH";
 import Sidebar from "./sideBar/SideBar";
 import Image from "next/image";
 import ChatWidget from "@/components/ChatBot/ChatWidget";
+import { TbMessageChatbotFilled } from "react-icons/tb";
 
 
-export default function Header({ onChatToggle }) {
+export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [isChatOpen, setIsChatOpen] = useState(false);
@@ -58,13 +59,7 @@ export default function Header({ onChatToggle }) {
                 </button>
               </Link>
               
-              <button
-                type="button"
-                className={styles.BtnHeader} // mesmo estilo do botão 'contato'
-                onClick={toggleChat}
-              >
-                Chat
-              </button>
+               <TbMessageChatbotFilled onClick={toggleChat} className={styles.iconChat} />
 
             </div>
           )}
