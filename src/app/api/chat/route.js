@@ -43,7 +43,7 @@ Somos apaixonados por tecnologia e prezamos por transparência e qualidade em ca
 `;
 
 export async function POST(req) {
-  const { prompt } = await req.json();
+try {  const { prompt } = await req.json();
   const key = process.env.OPENROUTER_API_KEY;
 
   if (!key) {
@@ -66,5 +66,20 @@ export async function POST(req) {
   });
 
   const data = await response.json();
-  return NextResponse.json(data);
+  if (!data.choices) {
+    return NextResponse.json({
+      error: data.error?.message || 'Erro desconhecido na OpenRouter',
+    });
+  }
+
+
+  return NextResponse.json({
+    content: data.choices[0].message.content,
+  });
+} catch (err) {
+    return NextResponse.json(
+      { error: 'Erro interno do servidor: ' + err.message },
+      { status: 500 }
+    );
+  }
 }
