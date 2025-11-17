@@ -66,6 +66,7 @@ try {  const { prompt } = await req.json();
   });
 
   const data = await response.json();
+  console.log("OPENROUTER RAW RESPONSE:", data);
   if (!data.choices) {
     return NextResponse.json({
       error: data.error?.message || 'Erro desconhecido na OpenRouter',
